@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>mailtriage — Política de Privacidade</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.65; max-width: 44rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem;
+  }
+  h1 { font-size: 1.7rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
+  .sub { color: #6b7280; margin-top: 0; }
+  code { background: rgba(127,127,127,.15); padding: .1em .35em; border-radius: 3px; }
+  ul { padding-left: 1.2rem; }
+  footer { margin-top: 3rem; font-size: .85rem; color: #6b7280; }
+</style>
+</head>
+<body>
+
+<h1>Política de Privacidade — mailtriage</h1>
+<p class="sub">Última atualização: 19 de novembro de 2026</p>
+
+<h2>O que é este software</h2>
+<p>
+  O <strong>mailtriage</strong> é um programa de código aberto que organiza uma
+  caixa de email: ele lê as mensagens que chegam, classifica cada uma segundo
+  regras definidas por quem o usa, e então aplica rótulos, move mensagens entre
+  pastas ou as descarta conforme essas regras.
+</p>
+<p>
+  Ele é <strong>auto-hospedado</strong>. Cada pessoa executa a sua própria
+  instância, no seu próprio computador ou servidor. Não existe serviço central,
+  não existe conta a criar, e não há operador que receba os dados de ninguém.
+</p>
+
+<h2>Quais dados são acessados</h2>
+<p>
+  Apenas a caixa de email que a própria pessoa autorizar, e apenas enquanto a
+  autorização estiver válida. O programa lê o remetente, o assunto e um trecho
+  do corpo de cada mensagem, porque precisa deles para classificar.
+</p>
+
+<h2>Para onde esses dados vão</h2>
+<p>
+  <strong>Para lugar nenhum além da máquina de quem executa o programa.</strong>
+</p>
+<ul>
+  <li>Não há servidor do desenvolvedor. Nada é enviado para fora.</li>
+  <li>Não há analytics, telemetria, rastreamento ou coleta de uso.</li>
+  <li>Não há compartilhamento com terceiros, porque não há terceiros.</li>
+  <li>Nenhum conteúdo de email é usado para treinar modelo algum.</li>
+</ul>
+<p>
+  O programa guarda localmente um histórico das decisões que tomou — remetente,
+  assunto e categoria atribuída — num banco de dados no próprio disco. Esse
+  histórico serve para não reprocessar a mesma mensagem e para gerar relatórios.
+  O corpo das mensagens não é armazenado.
+</p>
+
+<h2>Permissões solicitadas</h2>
+<p>
+  O programa pede o escopo <code>gmail.modify</code>, que é o mínimo necessário
+  para aplicar rótulos e mover mensagens entre pastas. Ele não solicita acesso a
+  contatos, agenda, arquivos ou qualquer outro serviço.
+</p>
+<p>
+  Esse escopo tecnicamente também permitiria enviar email. O programa
+  <strong>não envia</strong>: há um bloqueio no seu código que recusa qualquer
+  chamada a endpoints de envio antes que a requisição saia da máquina. Isso é
+  verificável no código-fonte e coberto por testes automatizados.
+</p>
+
+<h2>Credenciais</h2>
+<p>
+  O programa nunca vê nem armazena senhas. A autorização usa OAuth 2.0, e o
+  token resultante fica em arquivo local com permissão restrita ao usuário do
+  sistema. Nenhuma credencial é transmitida para fora da máquina.
+</p>
+
+<h2>Como revogar o acesso</h2>
+<p>
+  A qualquer momento, em
+  <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>,
+  removendo a autorização concedida. O acesso cessa imediatamente. Apagar os
+  arquivos locais do programa remove o histórico guardado.
+</p>
+
+<h2>Retenção</h2>
+<p>
+  Como todos os dados ficam na máquina de quem executa o programa, a retenção é
+  inteiramente controlada por essa pessoa. Não há cópia em nenhum outro lugar
+  para ser retida ou apagada.
+</p>
+
+<h2>Alterações</h2>
+<p>
+  Mudanças nesta política aparecem nesta mesma página, com a data de atualização
+  no topo.
+</p>
+
+<footer>
+  Software de uso pessoal, distribuído como código aberto. Dúvidas sobre o
+  funcionamento podem ser respondidas lendo o código-fonte, que é a descrição
+  mais fiel do que o programa faz.
+</footer>
+
+</body>
+</html>
